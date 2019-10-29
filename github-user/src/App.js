@@ -30,7 +30,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Sam's Github</h1>
         <div className= "profile">
-       <User  />
+       <User {...this.state.user}  />
       </div>
       </div>
     );

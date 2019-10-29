@@ -8,6 +8,7 @@ class User extends Component{
         return (
             <div className= "Card">
                 Sam's Github
+               <div> image:{this.props.avatar_url} username: {this.props.login}name: {this.props.name}</div>
             </div>)
         
     }
