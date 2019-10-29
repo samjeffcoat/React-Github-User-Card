@@ -1,8 +1,16 @@
-// import React from 'react';
+import React, {Component} from 'react';
 
 
-// function User(props){
-//     return(
 
-//     )
-// }
+
+class User extends Component{
+    render(){
+        return (
+            <div className= "Card">
+                Sam's Github
+            </div>)
+        
+    }
+}
+
+export default User;

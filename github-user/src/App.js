@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./App.css";
-
+import User from './User';
 class App extends React.Component {
   constructor() {
     super();
@@ -27,9 +27,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Sam's Github</h1>
         <div className= "profile">
-        {
-        this.state.persons.map(person =><h1 key= {person.id}>{person.name}</h1>)
-      }
+       <User />
       </div>
       </div>
     );
