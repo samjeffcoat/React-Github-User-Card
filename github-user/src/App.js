@@ -24,6 +24,17 @@ class App extends React.Component {
         })
       })
       .catch(err => console.log(err));
+
+
+      axios
+      .get("https://api.github.com/users/samjeffcoat/followers")
+      .then(res => {
+        this.setState({
+          followers: res.data
+        });
+        console.log("my data", this.state.followers)
+      })
+      .catch(err => console.log(err))
   }
   render() {
     return (
