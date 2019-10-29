@@ -1,23 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 
-class Followers extends React.Component{
+class Followers extends Component {
     render(){
         return(
-            <div className= "Follow">
+            <div>
                 <h3>Sam's Followers</h3>
-                <div className ="follower-container">
-                    {this.props.follower.map(follower => {
-                        <div key = {follower.id} className= "follow-card">
+                    {this.props.followers.map((follower, index)=> {
+                        return <div className= 'Friend' key= {index}>
                             <img className= "avatar" src = {follower.avatar_url} alt= "follower avatar"></img>
                             <h2 className ="usernames">Username: {follower.login}</h2>
-                        </div>
+                            </div>
                     })}
-                </div>
-
-            </div>
+            </div >
         )
     }
 }
-
 export default Followers;

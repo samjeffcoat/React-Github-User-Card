@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./App.css";
 import User from './User';
+import Followers from './Followers';
 
 
 
@@ -42,6 +43,7 @@ class App extends React.Component {
         <h1>Sam's Github</h1>
         <div className= "profile">
        <User {...this.state.user}  />
+       <Followers followers= {this.state.followers} />
       </div>
       </div>
     );
