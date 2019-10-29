@@ -2,22 +2,25 @@ import React from "react";
 import axios from "axios";
 import "./App.css";
 import User from './User';
+
+
+
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: 'samjeffcoat',
-      gitHubUser: {},
+      user: {},
       followers: []
 
     };
   }
   componentDidMount() {
     axios
-      .get('https://api.github.com/users/${this.state.username}')
+      .get("https://api.github.com/users/samjeffcoat")
       .then(res => {
+        console.log(res.data)
         this.setState({
-          gitHubUser: res.data
+          user: res.data
         })
       })
       .catch(err => console.log(err));
@@ -27,7 +30,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Sam's Github</h1>
         <div className= "profile">
-       <User />
+       <User  />
       </div>
       </div>
     );
