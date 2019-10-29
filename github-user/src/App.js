@@ -1,33 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import axios from "axios";
+import "./App.css";
 
-class  App extends React.Component {
-  constructor(){
+class App extends React.Component {
+  constructor() {
     super();
-    this.state ={
-      users:[]
-    }
+    this.state = {
+      username: 'samjeffcoat',
+      gitHubUser: {},
+      followers: []
+
+    };
   }
-  render(){
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}}
+  componentDidMount() {
+    axios
+      .get('https://api.github.com/users/${this.state.username}')
+      .then(res => {
+        this.setState({
+          gitHubUser: res.data
+        })
+      })
+      .catch(err => console.log(err));
+  }
+  render() {
+    return (
+      <div className="App">
+        <h1>Sam's Github</h1>
+        <div className= "profile">
+        {
+        this.state.persons.map(person =><h1 key= {person.id}>{person.name}</h1>)
+      }
+      </div>
+      </div>
+    );
+  }
+}
 
 export default App;
